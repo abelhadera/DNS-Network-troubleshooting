@@ -1,0 +1,40 @@
+Diagnostic 1
+Run nslookup -type=MX starwars.com to view ip addresses associated with the website’s mail exchanger. 
+It is not receiving emails because the ip addresses doesn’t match with the mail exchanger DNS, where as the primary is asltx.1.google.com but is shown as aspmx.1.google.com
+To fix this the correct DNS would be asltx.1.google.com and asltx.2.google.com 
+
+
+Diagnostic 2
+ 
+The SPF recorded for me by using command nslookup -type=txt theforce was
+ Ip4: 104.156.250.80, ip4:45.63.15.159, ip4:45.64.4.215
+None of the above listed ip has the new ip associated with the new mail server, so the DNS doesn’t recognize that Ip address and sends it straight to the spam folder
+The new ip address should have ip 45.23.176.21
+
+Diagnostic 3
+
+ The command to find the canonical name is  nslookup -type=cname www.theforce.net
+After looking at the nslookup above the url, it shows the canonical name as theforce.net instead of resistance.theforce.net.
+The corrected DNS should be resistance.theforce.net instead of theforce.net
+
+
+Diagnostic 4
+
+The command I used was nslookup -type=any princessleia.site to search for all the named servers. 
+There are only two name servers with a third one blank, and none of which have ns2.galaxybackup.com as the option. So adding it would be the solution for the DNS server 
+
+
+
+Diagnostic 5
+Running command aircrack-ng -w rockyou.txt Darkside.pcap got me the password to decrypt the packets which ended up being dictionary. ( not very star warsy by the way.)
+
+Sender Mac = Cisco-li:e3:e4:01 (00:0f:66:e3:34:01)
+Senders IP = 172.16.01
+Targets MAC: IntelCor_55:98:ef (00:13:ce:55:98:ef)
+Targets ip: 172.16.0.101
+
+
+
+
+
+
